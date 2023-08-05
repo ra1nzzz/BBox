@@ -27,7 +27,7 @@ public class App extends MultiDexApplication {
 
     @Override
     public void onCreate() {
-        super.onCreate();
+        super。onCreate();
         instance = this;
         initParams();
         // OKGo
@@ -38,24 +38,24 @@ public class App extends MultiDexApplication {
         //初始化数据库
         AppDataManager.init();
         LoadSir.beginBuilder()
-                .addCallback(new EmptyCallback())
-                .addCallback(new LoadingCallback())
-                .commit();
-        AutoSizeConfig.getInstance().setCustomFragment(true).getUnitsManager()
-                .setSupportDP(false)
-                .setSupportSP(false)
-                .setSupportSubunits(Subunits.MM);
+                。addCallback(new EmptyCallback())
+                。addCallback(new LoadingCallback())
+                。提交();
+        AutoSizeConfig.getInstance()。setCustomFragment(true)。getUnitsManager()
+                。setSupportDP(false)
+                。setSupportSP(false)
+                。setSupportSubunits(Subunits.MM);
         PlayerHelper.init();
-        JSEngine.getInstance().create();
+        JSEngine.getInstance()。create();
         FileUtils.cleanPlayerCache();
     }
 
     private void initParams() {
         // Hawk
-        Hawk.init(this).build();
+        Hawk.init(this)。build();
 
-        String defaultApiName = "默认-自备份线路";
-        String defaultApi = "https://cdn.jsdelivr.net/gh/mlabalabala/TVResource@main/boxCfg/default";
+        String defaultApiName = "酷影线路";
+        String defaultApi = "https://itt.yt/tv/";
 
         HashMap<String, String> defaultApiMap = Hawk.get(HawkConfig.API_MAP, new HashMap<>());
         defaultApiMap.put(defaultApiName, defaultApi);
@@ -88,8 +88,8 @@ public class App extends MultiDexApplication {
 
     @Override
     public void onTerminate() {
-        super.onTerminate();
-        JSEngine.getInstance().destroy();
+        super。onTerminate();
+        JSEngine.getInstance()。destroy();
     }
 
 
